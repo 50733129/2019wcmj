@@ -1,4 +1,4 @@
-<h1>head 1</h1>
+<h1>第一頁</h1>
 <p>content 1</p>
 <p></p>
 <div class="line number1 index0 alt2"><code class="html plain"></code></div>
@@ -11,3 +11,159 @@ function myFunction() {
  //alert("不要亂按")
 }
 // ]]></script>
+<h1>期中報告</h1>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/n5__mXnQhR4" width="560"></iframe></p>
+<h1>一個簡單的小遊戲</h1>
+<script type="text/javascript">// <![CDATA[
+var cwidth = 400;
+    var cheight = 300;
+    var dicex = 50;
+    var dicey = 50;
+    var dicewidth = 100;
+    var diceheight = 100;
+    var dotrad = 6;
+    var ctx;
+    var dx;
+    var dy;
+    var firstturn = true;
+    var point;
+function throwdice() {
+    var sum;
+    var ch = 1+Math.floor(Math.random()*6);
+    sum = ch;
+    dx = dicex;
+    dy = dicey;
+    drawface(ch);
+    dx = dicex + 150;
+    ch=1 + Math.floor(Math.random()*6);
+    sum += ch;
+    drawface(ch);
+    if (firstturn) {
+        switch(sum) {
+            case 7:
+            case 11:
+              document.f.outcome.value="You win!";
+              break;
+            case 2:
+            case 3:
+            case 12:
+              document.f.outcome.value="You lose!";
+              break;
+            default:
+              point = sum;
+              document.f.pv.value=point;
+              firstturn = false;
+              document.f.stage.value="Need follow-up throw.";
+              document.f.outcome.value="   ";
+        }
+    }
+    else {
+        switch(sum) {
+        case point:
+           document.f.outcome.value="You win!";
+           document.f.stage.value="Back to first throw.";
+           document.f.pv.value=" ";
+           firstturn = true;
+           break;
+        case 7:
+           document.f.outcome.value="You lose!";
+           document.f.stage.value="Back to first throw.";
+           document.f.pv.value=" ";
+           firstturn = true;
+        }
+            }
+}
+function drawface(n) {
+  ctx = document.getElementById('canvas').getContext('2d');  
+  ctx.lineWidth = 5;
+  ctx.clearRect(dx,dy,dicewidth,diceheight);
+  ctx.strokeRect(dx,dy,dicewidth,diceheight)
+  var dotx;
+  var doty;
+  ctx.fillStyle = "#009966";
+    switch(n) {
+        case 1:
+         draw1();
+         break;
+        case 2:
+         draw2();
+         break;
+        case 3:
+         draw2();
+         draw1();
+         break;
+        case 4:
+         draw4();
+         break;
+        case 5:
+         draw4();
+         draw1();
+         break;
+        case 6:
+         draw4();
+         draw2mid();
+         break;
+         
+    }
+}
+function draw1() {
+    var dotx;
+    var doty;
+    ctx.beginPath();
+    dotx = dx + .5*dicewidth;
+    doty = dy + .5*diceheight;
+    ctx.arc(dotx,doty,dotrad,0,Math.PI*2,true);
+    ctx.closePath();
+    ctx.fill();
+}
+function draw2() {
+    var dotx;
+    var doty;
+    ctx.beginPath();
+    dotx = dx + 3*dotrad;
+    doty = dy + 3*dotrad;
+    ctx.arc(dotx,doty,dotrad,0,Math.PI*2,true);
+    dotx = dx+dicewidth-3*dotrad;
+    doty = dy+diceheight-3*dotrad;
+    ctx.arc(dotx,doty,dotrad,0,Math.PI*2,true);
+    ctx.closePath();
+    ctx.fill();
+}
+function draw4() {
+    var dotx;
+    var doty;
+    ctx.beginPath();
+    dotx = dx + 3*dotrad;
+    doty = dy + 3*dotrad;
+    ctx.arc(dotx,doty,dotrad,0,Math.PI*2,true);
+    dotx = dx+dicewidth-3*dotrad;
+    doty = dy+diceheight-3*dotrad;
+    ctx.arc(dotx,doty,dotrad,0,Math.PI*2,true);
+    ctx.closePath();
+    ctx.fill();
+    ctx.beginPath();
+    dotx = dx + 3*dotrad;
+    doty = dy + diceheight-3*dotrad;  //no change
+    ctx.arc(dotx,doty,dotrad,0,Math.PI*2,true);
+    dotx = dx+dicewidth-3*dotrad;
+    doty = dy+ 3*dotrad;
+    ctx.arc(dotx,doty,dotrad,0,Math.PI*2,true);
+    ctx.closePath();
+    ctx.fill(); 
+}
+function draw2mid() {
+    var dotx;
+    var doty;
+    ctx.beginPath();
+    dotx = dx + 3*dotrad;
+    doty = dy + .5*diceheight;
+    ctx.arc(dotx,doty,dotrad,0,Math.PI*2,true);
+    dotx = dx+dicewidth-3*dotrad;
+    doty = dy + .5*diceheight; //no change
+    ctx.arc(dotx,doty,dotrad,0,Math.PI*2,true);
+    ctx.closePath();
+    ctx.fill();
+}
+// ]]></script>
+<p><canvas height="300" id="canvas" width="400"> Your browser doesn't support the HTML5 element canvas. </canvas> <br/> <button onclick="throwdice();">Throw dice </button></p>
+<form id="f" name="f">Stage: <input name="stage" type="text" value="First Throw"/> Point: <input name="pv" type="text" value="   "/> Outcome: <input name="outcome" type="text" value="     "/>&lt;/form</form>
