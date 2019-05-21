@@ -1698,8 +1698,8 @@ def savePage():
     """save all pages function"""
     page_content = request.form['page_content']
     # when element_format : "html", need to remove the annoying comment to prevent brython exec
-    page_content = [w.replace('// &lt;![CDATA[', '') for w in page_content]
-    page_content = [w.replace('// ]]&gt;', '') for w in page_content]
+    page_content = [w.replace('// <![CDATA[', '') for w in page_content]
+    page_content = [w.replace('// ]]>', '') for w in page_content]
     # check if administrator
     if not isAdmin():
         return redirect("/login")
@@ -2002,8 +2002,8 @@ def ssavePage():
     """seperate save page function"""
     page_content = request.form['page_content']
     # when element_format : "html", need to remove the annoying comment to prevent brython exec
-    page_content = page_content.replace('// &lt;![CDATA[', '')
-    page_content = page_content.replace('// ]]&gt;', '')
+    page_content = page_content.replace('// <![CDATA[', '')
+    page_content = page_content.replace('// ]]>', '')
     page_order = request.form['page_order']
     if not isAdmin():
         return redirect("/login")
