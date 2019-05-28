@@ -1,0 +1,112 @@
+<!doctype html>
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>CMSimfly</title> <link rel="stylesheet" type="text/css" href="./../static/cmsimply.css">
+<script src="tipuesearch_content.js"></script>
+<script src="./../static/jquery.js"></script>
+<link rel="stylesheet" href="./../static/tipuesearch/css/tipuesearch.css">
+<script src="./../static/tipuesearch/tipuesearch_set.js"></script>
+<script src="./../static/tipuesearch/tipuesearch.min.js"></script>
+
+<script type="text/javascript" src="./../static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCSharp.js"></script>
+<link type="text/css" rel="stylesheet" href="./../static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+<!-- for LaTeX equations 暫時不用
+<script src="https://scrum-3.github.io/web/math/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+-->
+<!-- 暫時不用
+<script src="./../static/fengari-web.js"></script>
+<script type="text/javascript" src="./../static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+
+<script type="text/javascript">
+/*shorthand of $(document).ready(function(){};); */
+$(function(){
+    $("ul.topmenu> li:has(ul) > a").append('<div class="arrow-right"></div>');
+    $("ul.topmenu > li ul li:has(ul) > a").append('<div class="arrow-right"></div>');
+});
+function doSearch() {
+     $('#tipue_search_input').tipuesearch({
+        newWindow: true, minimumLength: 2
+     });
+}
+$(document).ready(doSearch);
+</script>
+
+</head><header><h1>CMSimfly - 期末考</h1> <confmenu>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="sitemap.html">Site Map</a></li>
+<li><a href="./../reveal/index.html">reveal</a></li>
+<li><a href="./../blog/index.html">blog</a></li>
+
+</ul>
+</confmenu></header>
+<div class='container'><nav><ul id='css3menu1' class='topmenu'><div class="tipue_search_group"><input style="width: 6vw;" type="text" name="q" id="tipue_search_input" pattern=".{2,}" title="Press enter key to search" required></div><li><a href='第一頁.html'>第一頁</a><li><a href='期中報告.html'>期中報告</a><li><a href='小遊戲.html'>小遊戲</a><li><a href='期末報告.html'>期末報告</a><ul><li><a href='近端配置與管理.html'>近端配置與管理</a></li></ul><li><a href='國旗.html'>國旗</a><li><a href='虎科大vpn.html'>虎科大vpn</a><li><a href='virtualBox.html'>virtualBox</a></li></ul></nav><section><div id="tipue_search_content">國旗 << <a href='國旗.html'>Previous</a> <a href='virtualBox.html'>Next</a> >> virtualBox<br /><h1>虎科大vpn</h1>
+<h6><strong>1.首次使用須先安裝SSL VPN 程式(Juniper Networks Connect) </strong></h6>
+<h6>(1)請依您的作業系統版本下載使用者端程式：<a href="https://drive.narlabs.org.tw/navigate/s/8F663EC143514CF295FCB53B5B228956GUY">連結</a> </h6>
+<h6> <span>(2)程式下載完成後，點擊兩下開始安裝。</span></h6>
+<p><span><img alt="" height="270" src="./../images/Network_Connect_for__64_bit__Windows__8_0R5_X955TLuJfO.png" width="422"/></span></p>
+<div><span><strong>2. </strong><strong>進行身份驗證(可由Juniper Network Connect或IE，請擇一進行身分認證)</strong></span></div>
+<div></div>
+<div><span>2-1: Juniper Network Connect 應用程式認證</span></div>
+<blockquote><span></span>
+<div></div>
+</blockquote>
+<p><span>1."點選搜尋" &gt; 輸入程式名稱為Network Connect&gt; 點擊Network Connect</span></p>
+<p><span><img alt="" height="690" src="./../images/explorer_e9vs2LHPFX.png" width="401"/></span></p>
+<p><span>2.執行程式後，於"登入頁面"輸入網址 : <a href="https://sslvpn.nfu.edu.tw/nfu">https://sslvpn9.twaren.net/nfu</a><span><span> </span>，後按下"執行"</span></span></p>
+<p><span><img alt="" height="419" src="./../images/dsNetworkConnect_awKre5Htb8.png" width="461"/><br/></span></p>
+<p><span>3.輸入使用者帳號密碼，請填入校務行政AD帳號及密碼。請完整填寫您在校務行政AD帳號以及密碼，否則國網中心找不到對象進行身份確認 <br/><span>！(例: 員工編號或學號@ctx10.nfu.edu.tw）</span></span></p>
+<p><span><span><img alt="" height="419" src="./../images/dsNetworkConnect_nQey5PBvOZ.png" width="461"/></span></span></p>
+<p><span>4.出現"設定控制-警告"視窗，按下"是</span></p>
+<p><span><img alt="" height="529" src="./../images/chrome_qZu6iRgVKW.png" width="762"/></span></p>
+<p><span> 5.螢幕右下角顯示"已連接"，表示已成功連線。</span></p>
+<p><span><img alt="" height="261" src="./../images/suysrdbqjN.png" width="442"/></span></p>
+<div><span>2-2: IE網認證</span></div>
+<blockquote>
+<div><span>1.請在IE瀏覽器上按下右鍵 使用"以系統管理員身分執行"</span></div>
+<div><span>登入頁面請輸入： <a href="https://sslvpn9.twaren.net/nfu">https://sslvpn9.twaren.net/nfu</a>，按下「執行」，會出現帳號與密碼登入欄位。</span><br/><span>請填入虎尾科技大學的校務行政AD帳號及密碼，並請輸入下方驗證碼，進行身份確認。</span><br/><span><span><span>請完整填寫您在虎尾科技大學的校務行政AD帳號以及密碼</span></span>，否則國網中心找不到對象進行身份確認！</span></div>
+<div><span>(例:<span><span> 員工編號或學號@ctx10.nfu.edu.tw</span></span>）</span><br/><span>填寫完畢以後按下Login登入就會開始進行身份確認，請稍後一段時間。</span></div>
+<div><span><img alt="" height="681" src="./../images/explorer_VWcsXL2KLA.png" width="403"/></span></div>
+<div><span><img alt="" height="807" src="./../images/iexplore_1yIKqch6CH.png" width="1920"/></span></div>
+<div><span>2.點選「開始」 </span></div>
+<div><span><img alt="" height="961" src="./../images/iexplore_bpeaa2tKoq.png" width="1920"/></span></div>
+</blockquote>
+<br />國旗 << <a href='國旗.html'>Previous</a> <a href='virtualBox.html'>Next</a> >> virtualBox</div></section></div></body></html>
